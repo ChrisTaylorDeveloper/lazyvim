@@ -11,9 +11,11 @@ vim.api.nvim_create_autocmd("BufRead", {
   pattern = "notes.txt",
   desc = "Set foldmethod for my notes.txt file",
   callback = function()
-    print("Setting foldmethod=indent for notes.txt")
+    print("Folding notes.txt")
     vim.opt.foldmethod = "indent"
+    vim.opt.foldlevel = 0
   end,
 })
 
+-- I think this turns off Spell for txt files.
 vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
